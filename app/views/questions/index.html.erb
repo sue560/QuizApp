@@ -1,31 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Questions</h1>
+<h1>All Questions Made for all Quizzes</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Quiz #</th>
+      <th>Question #</th>
+      <th>Question</th>
       <th>Option1</th>
       <th>Option2</th>
       <th>Option3</th>
       <th>Option4</th>
-      <th>Correctanswer</th>
-      <th>Title</th>
-      <th>Quiz</th>
-      <th colspan="3"></th>
+      <th>Correct Answer</th>
+      
+      
+      <th colspan="8"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @questions.each do |question| %>
       <tr>
+        <td><%= question.quiz_id %></td>
+        <td><%= question.id %></td>
+        <td><%= question.title %></td>
         <td><%= question.option1 %></td>
         <td><%= question.option2 %></td>
         <td><%= question.option3 %></td>
         <td><%= question.option4 %></td>
         <td><%= question.correctAnswer %></td>
-        <td><%= question.title %></td>
-        <td><%= question.quiz_id %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>

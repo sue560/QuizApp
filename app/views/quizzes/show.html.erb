@@ -4,46 +4,29 @@
   <strong><%= @quiz.title %></strong> by <%= @quiz.user.name %>
 </h1>
 
-<p>Question #
+<table>
   <% @quiz.questions.each do |q| %>
-    <%= q.id %>
+    <tr>
+      <td>#<%= q.id %></td>
+      <td><%= q.title %></td>
+    </tr>
+    <tr>
+      <td>A)<%= q.option1 %></td>
+    </tr>
+      <td>B)<%= q.option2 %></td>
+    <tr>
+      <td>C)<%= q.option3 %></td>
+    </tr>
+    <tr>
+      <td>D)<%= q.option4 %></td>
+    </tr>
+    <tr>
+      <td>Answer: <%= q.correctAnswer %></td>
+    </tr>
+    <td><%= link_to 'Edit Question', edit_question_path(q) %><p></td>
   <% end %>
-</p>
-
-<p><strong>
-  <% @quiz.questions.each do |q| %>
-    <%= q.title %>
-  <% end %>
-  </strong>
-</p>
-
-<p><strong>A)</strong>
-  <% @quiz.questions.each do |q| %>
-    <%= q.option1 %>
-  <% end %>
-</p>
-
-<p><strong>B)</strong>
-  <% @quiz.questions.each do |q| %>
-    <%= q.option2 %>
-  <% end %>
-</p>
-
-<p><strong>C)</strong>
-  <% @quiz.questions.each do |q| %>
-    <%= q.option3 %>
-  <% end %>
-</p>
-
-<p><strong>D)</strong>
-  <% @quiz.questions.each do |q| %>
-    <%= q.option4 %>
-  <% end %>
-</p>
+</table>
 
 
-
-
-
-<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Edit Quiz', edit_quiz_path(@quiz) %> |
 <%= link_to 'Back', quizzes_path %>

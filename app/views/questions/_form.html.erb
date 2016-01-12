@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :Quiz_Number %><br>
+    <%= f.number_field :quiz_id %>
+  </div>
+    <div class="field">
+    <%= f.label :Question %><br>
+    <%= f.text_field :title %>
+  </div>
   <div class="field">
     <%= f.label :option1 %><br>
     <%= f.text_field :option1 %>
@@ -28,17 +35,9 @@
     <%= f.text_field :option4 %>
   </div>
   <div class="field">
-    <%= f.label :correctAnswer %><br>
+    <%= f.label :correct_option? %><br>
     <%= f.number_field :correctAnswer %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :quiz_id %><br>
-    <%= f.number_field :quiz_id %>
-  </div>
+  </div> 
   <div class="actions">
     <%= f.submit %>
   </div>
