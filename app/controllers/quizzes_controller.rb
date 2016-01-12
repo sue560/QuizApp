@@ -3,6 +3,16 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes
   # GET /quizzes.json
+
+  def take
+    @quiz = Quiz.find(params[:id])
+  end
+
+  # POST /quizzes/1/take
+  def submit
+    redirect_to '/users'
+  end
+
   def index
     @quizzes = Quiz.all
   end

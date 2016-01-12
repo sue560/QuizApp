@@ -1,0 +1,42 @@
+
+<h1>
+  <strong><%= @quiz.title %></strong> by <%= @quiz.user.name %>
+</h1>
+
+<!-- <input id="option2" name="question1" type="radio" value="adult" />
+<label for="option2">I'm over 21</label> -->
+
+<form action="/quizzes/:id/submit" method="post">
+  <table>
+    <% @quiz.questions.each do |q| %>
+      <tr>
+        <td>#<%= q.id %></td>
+        <td><%= q.title %></td>
+      </tr>
+      <tr>
+        <td>A)
+          <input id="option1" name="<%= q.id %>" type="radio" value="<%= q.option1 %>" />
+          <label for="option1"><%= q.option1 %></label>
+        </td>
+      </tr>
+        <td>B)
+          <input id="option2" name="<%= q.id %>" type="radio" value="<%= q.option2 %>" />
+          <label for="option2"><%= q.option2 %></label>
+        </td>
+      <tr>
+        <td>C)
+          <input id="option3" name="<%= q.id %>" type="radio" value="<%= q.option3 %>" />
+          <label for="option3"><%= q.option3 %></label>
+        </td>
+      </tr>
+      <tr>
+        <td>D)
+          <input id="option4" name="<%= q.id %>" type="radio" value="<%= q.option4 %>" />
+          <label for="option4"><%= q.option4 %></label>
+        </td>
+      </tr>
+      <p>
+    <% end %>
+  </table>
+  <button value="submit">Submit</button>
+</form>
