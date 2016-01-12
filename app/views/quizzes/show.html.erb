@@ -1,14 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @quiz.title %>
+<h1>
+  <strong><%= @quiz.title %></strong> by <%= @quiz.user.name %>
+</h1>
+
+<p>Question #
+  <% @quiz.questions.each do |q| %>
+    <%= q.id %>
+  <% end %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @quiz.user_id %>
+<p><strong>
+  <% @quiz.questions.each do |q| %>
+    <%= q.title %>
+  <% end %>
+  </strong>
 </p>
+
+<p><strong>A)</strong>
+  <% @quiz.questions.each do |q| %>
+    <%= q.option1 %>
+  <% end %>
+</p>
+
+<p><strong>B)</strong>
+  <% @quiz.questions.each do |q| %>
+    <%= q.option2 %>
+  <% end %>
+</p>
+
+<p><strong>C)</strong>
+  <% @quiz.questions.each do |q| %>
+    <%= q.option3 %>
+  <% end %>
+</p>
+
+<p><strong>D)</strong>
+  <% @quiz.questions.each do |q| %>
+    <%= q.option4 %>
+  <% end %>
+</p>
+
+
+
+
 
 <%= link_to 'Edit', edit_quiz_path(@quiz) %> |
 <%= link_to 'Back', quizzes_path %>

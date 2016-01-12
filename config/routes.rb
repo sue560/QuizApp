@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   resources :questions
-  resources :quizzes
+  
+  resources :quizzes do
+    resources :answers
+    resources :questions
+  end
+
   resources :answers
-  resources :users
+  
+  resources :users do
+    resources :quizzes
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
