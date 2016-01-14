@@ -8,7 +8,7 @@
 
 <form action="/quizzes/<%= @quiz.id %>/submit" method="post">
   <table>
-Which User are you? <input id="userID" name="userID" type="number">
+Which User are you? <input id="user_id" name="user_id" type="number">
     <% @quiz.questions.each do |q| %>
       <tr>
         <td>#<%= q.id %></td>
@@ -16,23 +16,23 @@ Which User are you? <input id="userID" name="userID" type="number">
       </tr>
       <tr>
         <td>A)
-          <input id="option1" name="<%= q.id %>" type="radio" value="<%= q.option1 %>" />
+          <input id="option1" name="answers[<%= q.id %>]" type="radio" value="1" />
           <label for="option1"><%= q.option1 %></label>
         </td>
       </tr>
         <td>B)
-          <input id="option2" name="<%= q.id %>" type="radio" value="<%= q.option2 %>" />
+          <input id="option2" name="answers[<%= q.id %>]" type="radio" value="2" />
           <label for="option2"><%= q.option2 %></label>
         </td>
       <tr>
         <td>C)
-          <input id="option3" name="<%= q.id %>" type="radio" value="<%= q.option3 %>" />
+          <input id="option3" name="answers[<%= q.id %>]" type="radio" value="3" />
           <label for="option3"><%= q.option3 %></label>
         </td>
       </tr>
       <tr>
         <td>D)
-          <input id="option4" name="<%= q.id %>" type="radio" value="<%= q.option4 %>" />
+          <input id="option4" name="answers[<%= q.id %>]" type="radio" value="4" />
           <label for="option4"><%= q.option4 %></label>
         </td>
       </tr>

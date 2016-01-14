@@ -1,1 +1,11 @@
-<%= params.inspect %>
+<!-- <!-- <%= params.inspect %> --> 
+
+
+
+<hr>
+
+<% params[:answers].each do | key, value | %>
+   <%= key %>
+   <%= value %>
+   <hr>
+<% end %>
