@@ -10,7 +10,7 @@ class QuizzesController < ApplicationController
 
   # POST /quizzes/1/take
   def submit
-    redirect_to '/users'
+    render 'submit'
   end
 
   def index
