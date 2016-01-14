@@ -6,8 +6,9 @@
 <!-- <input id="option2" name="question1" type="radio" value="adult" />
 <label for="option2">I'm over 21</label> -->
 
-<form action="/quizzes/:id/submit" method="post">
+<form action="/quizzes/<%= @quiz.id %>/submit" method="post">
   <table>
+Which User are you? <input id="userID" name="userID" type="number">
     <% @quiz.questions.each do |q| %>
       <tr>
         <td>#<%= q.id %></td>

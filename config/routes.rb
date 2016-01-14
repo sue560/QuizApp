@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :questions
   end
 
-  resources :answers
+  # resources :answers
 
   resources :users do
     resources :quizzes
